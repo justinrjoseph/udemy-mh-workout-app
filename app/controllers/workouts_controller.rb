@@ -3,7 +3,7 @@ class WorkoutsController < ApplicationController
   before_action :set_workout, except: [:index, :new, :create]
   
   def index
-    
+    @workouts = current_user.workouts
   end
   
   def show

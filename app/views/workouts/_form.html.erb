@@ -9,7 +9,7 @@
             prohibited this workout from saving:
           </h2>
           <ul>
-            <% @exercise.errors.full_messages.each do |message| %>
+            <% @workout.errors.full_messages.each do |message| %>
               <li><%= message %></li>
             <% end %>
           </ul>
@@ -18,19 +18,19 @@
     
       <div class="form-group">
         <div class="control-label col-md-2">
-          <%= f.label :duration_in_mins, "Duration (mins)" %>
+          <%= f.label :duration, "Duration (mins)" %>
         </div>
         <div class="col-md-10">
-          <%= f.number_field :duration_in_mins, class: 'form-control' %>
+          <%= f.number_field :duration, class: 'form-control' %>
         </div>
       </div>
     
       <div class="form-group">
         <div class="control-label col-md-2">
-          <%= f.label :description, "Details" %>
+          <%= f.label :details %>
         </div>
         <div class="col-md-10">
-          <%= f.text_area :description, class: 'form-control', rows: '10' %>
+          <%= f.text_area :details, class: 'form-control', rows: '10' %>
         </div>
       </div>
     

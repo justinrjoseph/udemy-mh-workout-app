@@ -21,7 +21,7 @@ class WorkoutsController < ApplicationController
       flash[:success] = "Workout has been created"
       redirect_to [current_user, @workout]
     else
-      flash[:danger] = "Workout was not created"
+      flash.now[:danger] = "Workout was not created"
       render :new
     end
   end
@@ -29,8 +29,7 @@ class WorkoutsController < ApplicationController
   private
   
     def workout_params
-      params.require(:workout).permit(:duration_in_mins, :description, :date,
-                                      :user_id)
+      params.require(:workout).permit(:duration, :details, :date, :user_id)
     end
   
     def set_workout

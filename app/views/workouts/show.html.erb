@@ -10,7 +10,7 @@
       <strong>Duration (mins):</strong>
     </div>
     <div class="col-xs-8 text-right">
-      <%= @workout.duration_in_mins %>
+      <%= @workout.duration %>
     </div>
   </div>
   
@@ -19,7 +19,7 @@
       <strong>Workout Details:</strong>
     </div>
     <div class="col-xs-8 text-right">
-      <%= truncate(@workout.description, length: 50) %>
+      <%= truncate(@workout.details, length: 50) %>
     </div>
   </div>
   

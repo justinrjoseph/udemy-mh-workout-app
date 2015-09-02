@@ -26,6 +26,20 @@ class WorkoutsController < ApplicationController
     end
   end
   
+  def edit
+    @workout = current_user.workouts.find(params[:id])
+  end
+  
+  def update    
+    if @workout.update(workout_params)
+      flash[:success] = "Workout was updated"
+      redirect_to [current_user, @workout]
+    else
+      flash.now[:danger] = "Workout update failed"
+      render :edit
+    end
+  end
+  
   private
   
     def workout_params

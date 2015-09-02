@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-md-12">
+    <%= form_for [current_user, @workout],
+        :html => { class: 'form-horizontal', role: 'form' } do |f| %>                            
+      <% if @workout.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@workout.errors.count, "error") %>
+            prohibited this workout from saving:
+          </h2>
+          <ul>
+            <% @exercise.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    
+      <div class="form-group">
+        <div class="control-label col-md-2">
+          <%= f.label :duration_in_mins, "Duration (mins)" %>
+        </div>
+        <div class="col-md-10">
+          <%= f.number_field :duration_in_mins, class: 'form-control' %>
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <div class="control-label col-md-2">
+          <%= f.label :description, "Details" %>
+        </div>
+        <div class="col-md-10">
+          <%= f.text_area :description, class: 'form-control', rows: '10' %>
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <div class="control-label col-md-2">
+          <%= f.label :date, "Workout Date" %>
+        </div>
+        <div class="col-md-10">
+          <%= f.text_field :date, class: 'form-control' %>
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <div class="col-md-10 col-md-offset-2">
+          <%= f.submit class: 'btn btn-success btn-lg' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

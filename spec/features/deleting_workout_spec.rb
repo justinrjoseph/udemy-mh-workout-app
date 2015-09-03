@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.feature "Deleting workouts" do
   
   before do
-    @owner = User.create(email: "owner@example.com", password: "password")
+    @owner = User.create(first_name: "John", last_name: "Doe",
+                         email: "owner@example.com", password: "password")
     
     @owner_workout = @owner.workouts.create!(duration: 48, details: "Cardio
                                              special", date: Date.today)

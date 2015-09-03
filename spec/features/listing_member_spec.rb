@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Listing members" do
+RSpec.feature "Listing users" do
   
   before do
     @john = User.create(first_name: "John", last_name: "Doe",

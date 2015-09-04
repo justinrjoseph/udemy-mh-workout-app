@@ -11,15 +11,15 @@ class FriendshipsController < ApplicationController
     user_id: current_user.id)) unless current_user.follows_or_same?(friend)
     redirect_to root_path
   end
+
+  def destroy
+    
+  end
   
   private
   
     def friendship_params
       params.permit(:friend_id, :user_id)
-    end
-  
-  def destroy
-    
-  end
+    ens
   
 end

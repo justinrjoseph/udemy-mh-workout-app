@@ -2,7 +2,8 @@ class FriendshipsController < ApplicationController
   before_action :authenticate_user!
   
   def show
-    
+    @friend = Friendship.find(params[:id]).friend
+    @workouts = @friend.workouts
   end
   
   def create
@@ -20,6 +21,6 @@ class FriendshipsController < ApplicationController
   
     def friendship_params
       params.permit(:friend_id, :user_id)
-    ens
+    end
   
 end

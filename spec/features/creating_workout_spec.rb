@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Creating workout" do
+RSpec.feature "Creating a workout" do
   
   before do
     @john = User.create(first_name: "John", last_name: "Doe",

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Searching for user" do
+RSpec.feature "Searching for users" do
   
   before do
     @john = User.create(first_name: "John", last_name: "Doe",
@@ -9,7 +9,7 @@ RSpec.feature "Searching for user" do
                          email: "sarahdoe@exampel.com", password: "password")
   end
   
-  scenario "with existing name returns all those users" do
+  scenario "with an existing name returns all those users" do
     visit "/"
     
     fill_in "search_name", with: "Doe"

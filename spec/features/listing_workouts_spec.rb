@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Listing workouts" do
+RSpec.feature "A workouts list" do
   
   before do
     @john = User.create(first_name: "John", last_name: "Doe",
@@ -13,7 +13,7 @@ RSpec.feature "Listing workouts" do
                                 date: Date.today )
   end
   
-  scenario "shows user's workouts for last seven days" do
+  scenario "shows a user's workouts for last seven days" do
     visit "/"
     
     click_link "My Lounge"

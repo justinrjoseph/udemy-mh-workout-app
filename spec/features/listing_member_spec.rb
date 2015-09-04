@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Listing users" do
+RSpec.feature "The users list" do
   
   before do
     @john = User.create(first_name: "John", last_name: "Doe",
@@ -9,7 +9,7 @@ RSpec.feature "Listing users" do
                          email: "sarahjoseph@exampel.com", password: "password")
   end
   
-  scenario "shows a list of registered members" do
+  scenario "shows registered members" do
     visit "/"
     
     expect(page).to have_content "List of Members"

@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   has_many :workouts
+  has_many :friendships
+  has_many :friends, through: :friendships, class_name: "User"
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -23,6 +25,10 @@ class User < ActiveRecord::Base
                                    "%#{names[0]}%", "%#{names[1]}%")
       .order(:first_name)
     end
+  end
+
+  def follows_or_same?(new_friend)
+    friendships.map(&:friend).include?(new_friend) || self == new_friend
   end
   
 end
